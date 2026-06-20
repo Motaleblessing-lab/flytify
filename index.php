@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeam As — Brochure Generator</title>
+    <title>Motale Blessing — Brochure Generator</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <div class="header">
         <div class="container">
-            <div class="logo">Jeam As</div>
+            <div class="logo">Motale Blessing</div>
             <div class="nav">
                 <a href="index.php">Home</a>
                 <a href="#templates">Templates</a>
@@ -73,7 +73,7 @@
 
     <div class="footer">
         <div class="container">
-            <p>&copy; <?php echo date('Y'); ?> Jeam As. All rights reserved.</p>
+            <p>&copy; <?php echo date('Y'); ?> Motale Blessing. All rights reserved.</p>
         </div>
     </div>
 
