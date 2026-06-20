@@ -1,219 +1,237 @@
-<!-- ============================================ -->
-<!-- BROCHURE TEMPLATE 1 — Flytify               -->
-<!-- ============================================ -->
-<!--                                                 -->
-<!-- WHAT YOU WILL LEARN:                            -->
-<!--   - Designing a print-ready HTML brochure        -->
-<!--   - Using CSS for a fixed canvas (A4/letter)    -->
-<!--   - Template placeholders for dynamic data      -->
-<!--                                                 -->
-<!-- YOUR TASK: Replace this entire file with        -->
-<!-- your own brochure design. Keep the              -->
-<!-- {{PLACEHOLDER}} markers so the generator        -->
-<!-- can fill them in.                               -->
-<!-- ============================================ -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Model 1 — Your Design Name]</title>
+    <title>{{COMPANY_NAME}} — Brochure</title>
     <style>
-        /*
-         * TODO: Replace this entire stylesheet with your own.
-         * This is just a minimal example to get you started.
-         */
-
-        /* EDIT: Change the page size to A4 or Letter as needed */
-        @page {
-            size: A4;
-            margin: 0;
-        }
-
+        @page { size: A4; margin: 0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* EDIT: Change this background to your brand colour */
             background: #ffffff;
             color: #333;
             line-height: 1.6;
         }
 
         .brochure {
-            /* EDIT: Adjust width and padding to match your design */
-            max-width: 210mm;  /* A4 width */
+            max-width: 210mm;
             margin: 0 auto;
-            padding: 20mm;
-            min-height: 297mm; /* A4 height */
+            padding: 0;
+            min-height: 297mm;
         }
 
-        /* ─── HEADER ──────────────────────────────────── */
+        /* ─── HEADER ──────────────────── */
         .brochure-header {
-            /* EDIT: Use your brand colours */
             background-color: {{PRIMARY_COLOR}};
             color: #ffffff;
-            padding: 30px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
+            padding: 40px 40px 30px;
+            position: relative;
+        }
+
+        .brochure-header .logo-wrap {
+            margin-bottom: 20px;
+        }
+
+        .brochure-header .logo-wrap img {
+            max-height: 60px;
+            max-width: 180px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
         }
 
         .brochure-header h1 {
-            font-size: 28px;
-            margin-bottom: 5px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
         }
 
         .brochure-header .tagline {
-            font-size: 16px;
-            opacity: 0.9;
+            font-size: 15px;
+            opacity: 0.88;
+            font-style: italic;
         }
 
-        /* ─── LOGO ────────────────────────────────────── */
-        .logo-area {
-            text-align: center;
-            margin: 20px 0;
+        /* ─── BODY ────────────────────── */
+        .brochure-body {
+            padding: 35px 40px;
         }
 
-        .logo-area img {
-            max-height: 80px;
-            /* EDIT: Adjust logo sizing */
-            max-width: 200px;
-        }
-
-        /* ─── CONTENT ─────────────────────────────────── */
-        .brochure-content {
-            padding: 20px 0;
-        }
-
-        .brochure-content h2 {
-            /* EDIT: Use your secondary brand colour */
+        /* ─── SECTION HEADING ─────────── */
+        .section-heading {
             color: {{SECONDARY_COLOR}};
+            font-size: 18px;
+            font-weight: 700;
             border-bottom: 2px solid {{SECONDARY_COLOR}};
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            margin-top: 28px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .brochure-content p {
-            margin-bottom: 15px;
-            /* TODO: Adjust font sizes and spacing */
+        .section-heading:first-child {
+            margin-top: 0;
         }
 
-        /* ─── CONTACT INFO ────────────────────────────── */
-        .contact-info {
-            margin-top: 30px;
-            padding: 20px;
-            /* EDIT: Use background based on your brand */
-            background-color: #f5f5f5;
+        p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        /* ─── SERVICE CARDS ───────────── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .service-card {
+            background: #f8f9ff;
+            border-left: 3px solid {{PRIMARY_COLOR}};
+            border-radius: 0 6px 6px 0;
+            padding: 12px 14px;
+        }
+
+        .service-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: {{SECONDARY_COLOR}};
+            margin-bottom: 4px;
+        }
+
+        .service-card p {
+            font-size: 12px;
+            margin: 0;
+            color: #666;
+        }
+
+        /* ─── CONTACT ─────────────────── */
+        .contact-box {
+            margin-top: 28px;
+            background-color: {{PRIMARY_COLOR}};
+            color: #ffffff;
+            padding: 22px 28px;
             border-radius: 8px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
-        .contact-info p {
-            margin-bottom: 5px;
+        .contact-box .contact-item {
+            display: flex;
+            flex-direction: column;
         }
 
-        .contact-info strong {
-            /* EDIT: Accent colour for labels */
+        .contact-box .contact-label {
+            font-size: 11px;
+            opacity: 0.75;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 2px;
+        }
+
+        .contact-box .contact-value {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ─── FOOTER ──────────────────── */
+        .brochure-footer {
+            margin-top: 30px;
+            padding: 16px 40px;
+            border-top: 1px solid #e8e8e8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .brochure-footer .brand {
+            font-weight: 700;
             color: {{PRIMARY_COLOR}};
         }
 
-        /* ─── FOOTER ──────────────────────────────────── */
-        .brochure-footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            text-align: center;
-            font-size: 12px;
-            /* EDIT: Match your brand */
-            border-top: 1px solid #ddd;
-            color: #888;
+        /* ─── PRINT ───────────────────── */
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none; }
         }
     </style>
-
-    <!-- TODO: Add Google Fonts or other external stylesheets if needed -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=...&display=swap" rel="stylesheet"> -->
 </head>
 <body>
 
     <div class="brochure">
 
-        <!-- ════════════════════════════════════════════ -->
-        <!-- HEADER                                       -->
-        <!-- ════════════════════════════════════════════ -->
-        <!-- TODO: Rearrange these sections to match your design -->
-
         <div class="brochure-header">
+            <div class="logo-wrap">
+                <img src="{{LOGO_PATH}}" alt="{{COMPANY_NAME}} logo" onerror="this.style.display='none'">
+            </div>
             <h1>{{COMPANY_NAME}}</h1>
             <p class="tagline">{{TAGLINE}}</p>
         </div>
 
-        <!-- ════════════════════════════════════════════ -->
-        <!-- LOGO                                         -->
-        <!-- ════════════════════════════════════════════ -->
-        <!-- TODO: Position the logo where you want it -->
+        <div class="brochure-body">
 
-        <div class="logo-area">
-            <!-- TODO: Replace with {{LOGO_PATH}} when PHP is ready -->
-            <img src="{{LOGO_PATH}}" alt="{{COMPANY_NAME}} logo">
+            <h2 class="section-heading">About Us</h2>
+            <p>Welcome to <strong>{{COMPANY_NAME}}</strong>. We are a dedicated team committed to delivering outstanding results for every client. Our approach combines deep expertise with personalised attention to ensure your success.</p>
+            <p>Founded with a vision to make a real difference, we have grown into a trusted partner for businesses of all sizes. Whatever your goals, we have the skills and passion to help you achieve them.</p>
+
+            <h2 class="section-heading">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Consulting</h4>
+                    <p>Expert advice tailored to your business needs and goals.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Strategy</h4>
+                    <p>Comprehensive planning to drive growth and performance.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Support</h4>
+                    <p>Reliable, ongoing assistance whenever you need it.</p>
+                </div>
+            </div>
+
+            <h2 class="section-heading">Why Choose Us</h2>
+            <p>We stand out through our commitment to quality, transparency, and results. Our team works closely with you at every stage — from initial consultation through to delivery — ensuring you are informed, confident, and satisfied.</p>
+
+            <div class="contact-box">
+                <div class="contact-item">
+                    <span class="contact-label">Contact Person</span>
+                    <span class="contact-value">{{FULL_NAME}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">{{EMAIL}}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">{{PHONE}}</span>
+                </div>
+            </div>
+
         </div>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- MAIN CONTENT                                 -->
-        <!-- ════════════════════════════════════════════ -->
-        <!-- TODO: Replace this entire section with your brochure content -->
-
-        <div class="brochure-content">
-
-            <h2>[About Us]</h2>
-            <p><!-- TODO: Replace with your company description -->
-                [Write a paragraph about your company here. What do you do?
-                What makes you different? Why should customers choose you?]
-            </p>
-
-            <h2>[Our Services]</h2>
-            <p><!-- TODO: List your services -->
-                [Service 1: Description of your first service or product.]
-            </p>
-            <p>
-                [Service 2: Description of your second service or product.]
-            </p>
-            <p>
-                [Service 3: Description of your third service or product.]
-            </p>
-
-            <!-- TODO: Add more sections: Testimonials, Team, Portfolio, etc. -->
-
-        </div>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- CONTACT INFO                                 -->
-        <!-- ════════════════════════════════════════════ -->
-
-        <div class="contact-info">
-            <h2>[Contact Us]</h2>
-
-            <!-- TODO: Rearrange contact fields. Add/remove as needed. -->
-            <p><strong>[Name:]</strong> {{FULL_NAME}}</p>
-            <p><strong>[Company:]</strong> {{COMPANY_NAME}}</p>
-            <p><strong>[Email:]</strong> {{EMAIL}}</p>
-            <p><strong>[Phone:]</strong> {{PHONE}}</p>
-
-            <!-- TODO: Add more contact fields -->
-            <!--
-            <p><strong>[Website:]</strong> yourwebsite.com</p>
-            <p><strong>[Address:]</strong> 123 Main Street, City, Country</p>
-            -->
-        </div>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- FOOTER                                       -->
-        <!-- ════════════════════════════════════════════ -->
 
         <div class="brochure-footer">
-            <!-- TODO: Update the footer text -->
-            <p>&copy; [Year] {{COMPANY_NAME}}. [All rights reserved.]</p>
-            <p>[Tagline or motto]</p>
+            <span class="brand">{{COMPANY_NAME}}</span>
+            <span>&copy; {{YEAR}} {{COMPANY_NAME}}. All rights reserved.</span>
+            <span>{{TAGLINE}}</span>
         </div>
 
+    </div>
+
+    <div class="no-print" style="text-align:center; padding:20px; background:#f0f4ff;">
+        <button onclick="window.print()" style="background:{{PRIMARY_COLOR}}; color:#fff; border:none; padding:12px 28px; font-size:15px; border-radius:6px; cursor:pointer; font-weight:bold;">
+            Print / Save as PDF
+        </button>
+        &nbsp;
+        <a href="test.php" style="color:#666; font-size:14px;">← Edit Brochure</a>
     </div>
 
 </body>

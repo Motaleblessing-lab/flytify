@@ -1,24 +1,11 @@
 /**
- * Flytify Brochure Generator — JavaScript
- *
- * This file handles the interactive parts of the
- * brochure builder. Right now only ONE feature
- * works — the primary colour preview.
- *
- * YOUR TASK:
- *   - Make the secondary colour preview work too
- *   - Add form validation (check fields are filled)
- *   - Show a preview of the selected logo image
- *   - Add a live character counter for the tagline
+ * Jeam As Brochure Generator — JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ─── PRIMARY COLOUR (works!) ────────────────
-    // When the user picks a colour, the swatch
-    // next to it updates to match.
-
-    var primaryInput = document.getElementById('primary-color');
+    // ─── PRIMARY COLOUR preview ─────────────────
+    var primaryInput  = document.getElementById('primary_color');
     var primarySwatch = document.getElementById('primary-swatch');
 
     if (primaryInput && primarySwatch) {
@@ -27,38 +14,62 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ─── SECONDARY COLOUR (broken — fix me!) ────
-    // TODO: Add an event listener on the secondary
-    // colour input that updates secondary-swatch.
-    //
-    // Hint: It works the same way as primary above.
-    // You need:
-    //   1. Get the element with id="secondary-color"
-    //   2. Get the element with id="secondary-swatch"
-    //   3. Add an 'input' event listener that sets
-    //      swatch.style.backgroundColor = input.value
-
-    var secondaryInput = document.getElementById('secondary-color');
+    // ─── SECONDARY COLOUR preview ───────────────
+    var secondaryInput  = document.getElementById('secondary_color');
     var secondarySwatch = document.getElementById('secondary-swatch');
 
-    // TODO: Your code goes here
+    if (secondaryInput && secondarySwatch) {
+        secondaryInput.addEventListener('input', function () {
+            secondarySwatch.style.backgroundColor = this.value;
+        });
+    }
 
     // ─── LOGO PREVIEW ───────────────────────────
-    // TODO: When the user selects a logo file,
-    // show a small preview of it on the page.
-    //
-    // Hint: Use the FileReader API:
-    //   var reader = new FileReader();
-    //   reader.onload = function(e) { ... };
-    //   reader.readAsDataURL(file);
+    var logoInput       = document.getElementById('logo');
+    var logoPreview     = document.getElementById('logo-preview');
+    var logoPreviewWrap = document.getElementById('logo-preview-wrap');
+
+    if (logoInput && logoPreview) {
+        logoInput.addEventListener('change', function () {
+            var file = this.files[0];
+            if (!file) return;
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                logoPreview.src = e.target.result;
+                logoPreviewWrap.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // ─── TAGLINE CHARACTER COUNTER ──────────────
+    var taglineInput   = document.getElementById('tagline');
+    var taglineCounter = document.getElementById('tagline-counter');
+
+    if (taglineInput && taglineCounter) {
+        taglineInput.addEventListener('input', function () {
+            var count = this.value.length;
+            taglineCounter.textContent = count + ' / 100 characters';
+            taglineCounter.style.color = count >= 90 ? '#e53e3e' : '#999999';
+        });
+    }
 
     // ─── FORM VALIDATION ────────────────────────
-    // TODO: Before the form submits, check that
-    // required fields (like Full Name) are filled.
-    // Show an alert if something is missing.
+    var form      = document.getElementById('brochure-form');
+    var nameInput = document.getElementById('full_name');
 
-    // ─── TAGLINE COUNTER ────────────────────────
-    // TODO: Show a live "X / 100 characters" count
-    // below the tagline input field.
+    if (form && nameInput) {
+        form.addEventListener('submit', function (e) {
+            if (nameInput.value.trim() === '') {
+                e.preventDefault();
+                nameInput.focus();
+                nameInput.style.borderColor = '#e53e3e';
+                alert('Please enter your full name before generating the brochure.');
+            } else {
+                nameInput.style.borderColor = '';
+            }
+        });
+    }
 
 });
