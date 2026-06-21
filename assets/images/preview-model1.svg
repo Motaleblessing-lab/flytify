@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#faf6f0"/>
+  <!-- Header band -->
+  <rect width="300" height="56" fill="#1a4731"/>
+  <!-- Brown accent line -->
+  <rect y="56" width="300" height="4" fill="#c8956c"/>
+  <!-- Logo placeholder circle -->
+  <circle cx="36" cy="28" r="16" fill="#c8956c" opacity="0.85"/>
+  <text x="36" y="33" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1a4731" font-weight="bold">MB</text>
+  <!-- Company name -->
+  <text x="64" y="24" font-family="Georgia,serif" font-size="13" fill="#ffffff" font-weight="bold">Motale Blessing</text>
+  <text x="64" y="40" font-family="Georgia,serif" font-size="9" fill="#c8d8c0" font-style="italic">Excellence in every step</text>
+  <!-- Section heading -->
+  <rect x="20" y="76" width="50" height="2" fill="#2d6a4f"/>
+  <text x="20" y="72" font-family="Georgia,serif" font-size="8" fill="#4a2c17" font-weight="bold" letter-spacing="1">ABOUT US</text>
+  <!-- Body lines -->
+  <rect x="20" y="82" width="180" height="5" rx="2" fill="#e8d5c4"/>
+  <rect x="20" y="92" width="160" height="5" rx="2" fill="#e8d5c4"/>
+  <rect x="20" y="102" width="170" height="5" rx="2" fill="#e8d5c4"/>
+  <!-- Service cards row -->
+  <rect x="20" y="120" width="78" height="36" rx="3" fill="#ffffff" stroke="#e8d5c4" stroke-width="1"/>
+  <rect x="20" y="120" width="3" height="36" rx="1" fill="#2d6a4f"/>
+  <text x="30" y="132" font-family="Georgia,serif" font-size="7" fill="#4a2c17" font-weight="bold">Consulting</text>
+  <rect x="30" y="136" width="55" height="3" rx="1" fill="#e8d5c4"/>
+  <rect x="30" y="142" width="45" height="3" rx="1" fill="#e8d5c4"/>
+
+  <rect x="111" y="120" width="78" height="36" rx="3" fill="#ffffff" stroke="#e8d5c4" stroke-width="1"/>
+  <rect x="111" y="120" width="3" height="36" rx="1" fill="#2d6a4f"/>
+  <text x="121" y="132" font-family="Georgia,serif" font-size="7" fill="#4a2c17" font-weight="bold">Strategy</text>
+  <rect x="121" y="136" width="55" height="3" rx="1" fill="#e8d5c4"/>
+  <rect x="121" y="142" width="45" height="3" rx="1" fill="#e8d5c4"/>
+
+  <rect x="202" y="120" width="78" height="36" rx="3" fill="#ffffff" stroke="#e8d5c4" stroke-width="1"/>
+  <rect x="202" y="120" width="3" height="36" rx="1" fill="#2d6a4f"/>
+  <text x="212" y="132" font-family="Georgia,serif" font-size="7" fill="#4a2c17" font-weight="bold">Support</text>
+  <rect x="212" y="136" width="55" height="3" rx="1" fill="#e8d5c4"/>
+  <rect x="212" y="142" width="45" height="3" rx="1" fill="#e8d5c4"/>
+
+  <!-- Contact band -->
+  <rect x="20" y="166" width="260" height="22" rx="4" fill="#1a4731"/>
+  <text x="30" y="180" font-family="Georgia,serif" font-size="7" fill="#e8d5c4">Name · Email · Phone</text>
+
+  <!-- Footer line -->
+  <rect x="20" y="193" width="260" height="1" fill="#e8d5c4"/>
+  <text x="150" y="199" text-anchor="middle" font-family="Georgia,serif" font-size="6" fill="#8a6652">© 2026 Motale Blessing</text>
+
+  <!-- Label badge -->
+  <rect x="210" y="8" width="74" height="18" rx="4" fill="#7c4a1e"/>
+  <text x="247" y="21" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#ffffff" font-weight="bold">Classic</text>
+</svg>

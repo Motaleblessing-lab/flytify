@@ -32,14 +32,14 @@
 
                     <label class="model-option">
                         <input type="radio" name="model" value="model1" <?php echo $selectedModel === 'model1' ? 'checked' : ''; ?>>
-                        <span class="model-preview box-1">Classic</span>
-                        <span>Model 1 — Classic</span>
+                        <img src="assets/images/preview-model1.svg" alt="Classic template preview" class="model-preview-img">
+                        <span class="model-label">Model 1 — Classic</span>
                     </label>
 
                     <label class="model-option">
                         <input type="radio" name="model" value="model2" <?php echo $selectedModel === 'model2' ? 'checked' : ''; ?>>
-                        <span class="model-preview box-2">Modern</span>
-                        <span>Model 2 — Modern</span>
+                        <img src="assets/images/preview-model2.svg" alt="Modern template preview" class="model-preview-img">
+                        <span class="model-label">Model 2 — Modern</span>
                     </label>
                 </div>
 
@@ -80,13 +80,13 @@
                     <div class="row">
                         <div class="field">
                             <label for="primary_color">Primary Colour</label>
-                            <input type="color" id="primary_color" name="primary_color" value="#3B82F6">
-                            <div class="swatch" id="primary-swatch" style="background:#3B82F6;"></div>
+                            <input type="color" id="primary_color" name="primary_color" value="#1a4731">
+                            <div class="swatch" id="primary-swatch" style="background:#1a4731;"></div>
                         </div>
                         <div class="field">
                             <label for="secondary_color">Secondary Colour</label>
-                            <input type="color" id="secondary_color" name="secondary_color" value="#1E3A5F">
-                            <div class="swatch" id="secondary-swatch" style="background:#1E3A5F;"></div>
+                            <input type="color" id="secondary_color" name="secondary_color" value="#7c4a1e">
+                            <div class="swatch" id="secondary-swatch" style="background:#7c4a1e;"></div>
                         </div>
                     </div>
                 </div>

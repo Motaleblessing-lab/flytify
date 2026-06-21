@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#faf6f0"/>
+  <!-- Sidebar -->
+  <rect width="96" height="200" fill="#4a2c17"/>
+  <!-- Sidebar accent line -->
+  <rect x="96" width="4" height="200" fill="#c8956c"/>
+  <!-- Logo circle in sidebar -->
+  <circle cx="48" cy="36" r="20" fill="#7c4a1e"/>
+  <text x="48" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#faf6f0" font-weight="bold">MB</text>
+  <!-- Company name in sidebar -->
+  <text x="48" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#ffffff" font-weight="bold">Motale</text>
+  <text x="48" y="83" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#ffffff" font-weight="bold">Blessing</text>
+  <text x="48" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#c8956c" font-style="italic">Excellence in</text>
+  <text x="48" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#c8956c" font-style="italic">every step</text>
+  <!-- Sidebar divider -->
+  <rect x="12" y="118" width="72" height="1" fill="#7c4a1e"/>
+  <!-- Sidebar contact labels -->
+  <text x="48" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="6" fill="#e8d5c4" letter-spacing="1">CONTACT</text>
+  <rect x="12" y="136" width="72" height="4" rx="1" fill="#7c4a1e" opacity="0.6"/>
+  <rect x="12" y="144" width="60" height="4" rx="1" fill="#7c4a1e" opacity="0.6"/>
+  <rect x="12" y="152" width="66" height="4" rx="1" fill="#7c4a1e" opacity="0.6"/>
+  <!-- Sidebar values -->
+  <rect x="12" y="168" width="72" height="1" fill="#7c4a1e"/>
+  <text x="48" y="180" text-anchor="middle" font-family="Georgia,serif" font-size="6" fill="#e8d5c4" letter-spacing="1">VALUES</text>
+  <rect x="12" y="185" width="55" height="3" rx="1" fill="#7c4a1e" opacity="0.5"/>
+
+  <!-- Main content area -->
+  <!-- Section heading 1 -->
+  <text x="116" y="24" font-family="Georgia,serif" font-size="8" fill="#4a2c17" font-weight="bold">Our Story</text>
+  <rect x="116" y="27" width="50" height="1.5" fill="#2d6a4f"/>
+  <rect x="116" y="33" width="168" height="4" rx="1" fill="#e8d5c4"/>
+  <rect x="116" y="41" width="155" height="4" rx="1" fill="#e8d5c4"/>
+  <rect x="116" y="49" width="162" height="4" rx="1" fill="#e8d5c4"/>
+
+  <!-- Highlight box -->
+  <rect x="116" y="62" width="168" height="20" rx="2" fill="#f2ebe3"/>
+  <rect x="116" y="62" width="3" height="20" fill="#7c4a1e"/>
+  <rect x="124" y="68" width="120" height="4" rx="1" fill="#c8956c" opacity="0.7"/>
+  <rect x="124" y="75" width="90" height="4" rx="1" fill="#c8956c" opacity="0.5"/>
+
+  <!-- Section heading 2 -->
+  <text x="116" y="100" font-family="Georgia,serif" font-size="8" fill="#4a2c17" font-weight="bold">What We Offer</text>
+  <rect x="116" y="103" width="62" height="1.5" fill="#2d6a4f"/>
+  <!-- Offering list items -->
+  <text x="120" y="114" font-family="Georgia,serif" font-size="7" fill="#2d6a4f">→</text>
+  <rect x="130" y="110" width="140" height="4" rx="1" fill="#e8d5c4"/>
+  <text x="120" y="124" font-family="Georgia,serif" font-size="7" fill="#2d6a4f">→</text>
+  <rect x="130" y="120" width="130" height="4" rx="1" fill="#e8d5c4"/>
+  <text x="120" y="134" font-family="Georgia,serif" font-size="7" fill="#2d6a4f">→</text>
+  <rect x="130" y="130" width="135" height="4" rx="1" fill="#e8d5c4"/>
+
+  <!-- Section heading 3 -->
+  <text x="116" y="152" font-family="Georgia,serif" font-size="8" fill="#4a2c17" font-weight="bold">Why Choose Us</text>
+  <rect x="116" y="155" width="68" height="1.5" fill="#2d6a4f"/>
+  <rect x="116" y="161" width="168" height="4" rx="1" fill="#e8d5c4"/>
+  <rect x="116" y="169" width="148" height="4" rx="1" fill="#e8d5c4"/>
+
+  <!-- Footer -->
+  <rect y="188" width="300" height="12" fill="#2d6a4f"/>
+  <text x="150" y="197" text-anchor="middle" font-family="Georgia,serif" font-size="6" fill="#e8d5c4">© 2026 Motale Blessing — All rights reserved</text>
+
+  <!-- Label badge -->
+  <rect x="210" y="8" width="74" height="18" rx="4" fill="#1a4731"/>
+  <text x="247" y="21" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#ffffff" font-weight="bold">Modern</text>
+</svg>

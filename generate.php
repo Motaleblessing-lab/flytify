@@ -1,4 +1,6 @@
 <?php
+require_once 'config/database.php';
+
 // Redirect if accessed directly without POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: test.php');
@@ -12,8 +14,8 @@ $tagline        = htmlspecialchars(trim($_POST['tagline']         ?? ''));
 $email          = htmlspecialchars(trim($_POST['email']           ?? ''));
 $phone          = htmlspecialchars(trim($_POST['phone']           ?? ''));
 $model          = in_array($_POST['model'] ?? '', ['model1', 'model2']) ? $_POST['model'] : 'model1';
-$primaryColor   = preg_match('/^#[0-9A-Fa-f]{6}$/', $_POST['primary_color']   ?? '') ? $_POST['primary_color']   : '#3B82F6';
-$secondaryColor = preg_match('/^#[0-9A-Fa-f]{6}$/', $_POST['secondary_color'] ?? '') ? $_POST['secondary_color'] : '#1E3A5F';
+$primaryColor   = preg_match('/^#[0-9A-Fa-f]{6}$/', $_POST['primary_color']   ?? '') ? $_POST['primary_color']   : '#1a4731';
+$secondaryColor = preg_match('/^#[0-9A-Fa-f]{6}$/', $_POST['secondary_color'] ?? '') ? $_POST['secondary_color'] : '#7c4a1e';
 
 // Basic validation
 if ($fullName === '') {
@@ -26,7 +28,7 @@ $logoPath = 'assets/images/placeholder-logo.png';
 
 if (isset($_FILES['logo']) && $_FILES['logo']['error'] === UPLOAD_ERR_OK) {
     $allowedTypes = ['image/png', 'image/jpeg'];
-    $fileType = mime_content_type($_FILES['logo']['tmp_name']);
+    $fileType     = mime_content_type($_FILES['logo']['tmp_name']);
 
     if (in_array($fileType, $allowedTypes) && $_FILES['logo']['size'] <= 2 * 1024 * 1024) {
         $ext      = strtolower(pathinfo($_FILES['logo']['name'], PATHINFO_EXTENSION));
@@ -43,35 +45,21 @@ if (isset($_FILES['logo']) && $_FILES['logo']['error'] === UPLOAD_ERR_OK) {
     }
 }
 
-// ─── Connect to database (optional — skipped if env not set) ──
-$dbSaved = false;
-$dbHost = getenv('DB_HOST') ?: 'localhost';
-$dbName = getenv('DB_NAME') ?: '';
-$dbUser = getenv('DB_USER') ?: 'root';
-$dbPass = getenv('DB_PASS') ?: '';
+// ─── Save to database ─────────────────────────────────────────
+try {
+    $pdo = getDB();
 
-if ($dbName !== '') {
-    try {
-        $pdo = new PDO(
-            "mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4",
-            $dbUser,
-            $dbPass
-        );
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "INSERT INTO submissions
+                (full_name, company_name, tagline, email, phone, model, primary_color, secondary_color, custom_image_path)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        $sql = "INSERT INTO submissions
-                    (full_name, company_name, tagline, email, phone, model, primary_color, secondary_color, custom_image_path)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            $fullName, $companyName, $tagline, $email, $phone,
-            $model, $primaryColor, $secondaryColor, $logoPath
-        ]);
-        $dbSaved = true;
-    } catch (PDOException $e) {
-        // DB save failed — still render brochure
-    }
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        $fullName, $companyName, $tagline, $email, $phone,
+        $model, $primaryColor, $secondaryColor, $logoPath
+    ]);
+} catch (RuntimeException $e) {
+    // DB unavailable — still render the brochure
 }
 
 // ─── Load and render template ─────────────────────────────────
