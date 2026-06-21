@@ -1,8 +1,20 @@
 /* =========================================== */
-/* Motale Blessing Brochure Generator          */
+/* Motale Blessing — Brown & Green Theme       */
 /* =========================================== */
 
-/* ─── Reset ──────────────────────────────── */
+:root {
+    --green-dark:   #1a4731;
+    --green-mid:    #2d6a4f;
+    --green-light:  #52b788;
+    --brown-dark:   #4a2c17;
+    --brown-mid:    #7c4a1e;
+    --brown-light:  #c8956c;
+    --cream:        #faf6f0;
+    --cream-border: #e8d5c4;
+    --text-dark:    #2c1810;
+    --text-mid:     #5c3d2e;
+    --text-muted:   #8a6652;
+}
 
 * {
     margin: 0;
@@ -11,9 +23,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-    color: #1a2e1a;
-    background: #ffffff;
+    font-family: 'Segoe UI', Georgia, Arial, sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
     line-height: 1.6;
 }
 
@@ -23,15 +35,16 @@ img {
 }
 
 a {
-    color: #16a34a;
+    color: var(--green-mid);
     text-decoration: none;
 }
 
 a:hover {
+    color: var(--brown-mid);
     text-decoration: underline;
 }
 
-/* ─── Layout helpers ─────────────────────── */
+/* ─── Layout ──────────────────────────────── */
 
 .container {
     max-width: 1000px;
@@ -42,8 +55,8 @@ a:hover {
 /* ─── Header ─────────────────────────────── */
 
 .header {
-    background: #ffffff;
-    border-bottom: 2px solid #bbf7d0;
+    background: var(--green-dark);
+    border-bottom: 3px solid var(--brown-light);
     padding: 15px 0;
 }
 
@@ -56,7 +69,8 @@ a:hover {
 .logo {
     font-size: 22px;
     font-weight: bold;
-    color: #15803d;
+    color: var(--cream);
+    letter-spacing: 0.5px;
 }
 
 .nav {
@@ -66,22 +80,30 @@ a:hover {
 }
 
 .nav a {
-    color: #333333;
+    color: #d4c5b8;
     font-size: 14px;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--brown-light);
+    text-decoration: none;
 }
 
 /* ─── Buttons ────────────────────────────── */
 
 .btn, .btn-small {
     display: inline-block;
-    background: #16a34a;
-    color: #ffffff;
+    background: var(--brown-mid);
+    color: #fff;
     padding: 12px 28px;
     border-radius: 6px;
     font-weight: bold;
     border: none;
     cursor: pointer;
     font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
 }
 
 .btn-small {
@@ -90,56 +112,70 @@ a:hover {
 }
 
 .btn:hover, .btn-small:hover {
-    background: #15803d;
+    background: var(--brown-dark);
     text-decoration: none;
+    color: #fff;
 }
 
 /* ─── Hero ───────────────────────────────── */
 
 .hero {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    background: linear-gradient(135deg, var(--green-dark) 0%, #2d5a3d 50%, var(--brown-dark) 100%);
     padding: 90px 0;
     text-align: center;
-    border-bottom: 1px solid #bbf7d0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 38px;
     margin-bottom: 15px;
-    color: #14532d;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
 }
 
 .hero-sub {
-    font-size: 18px;
-    color: #4b7a55;
+    font-size: 17px;
+    color: #c8d8c0;
     max-width: 550px;
-    margin: 0 auto 30px;
+    margin: 0 auto 32px;
+    position: relative;
 }
 
 /* ─── Sections ───────────────────────────── */
 
 .section {
-    padding: 60px 0;
+    padding: 65px 0;
     text-align: center;
 }
 
 .section h2 {
     font-size: 28px;
     margin-bottom: 10px;
-    color: #14532d;
+    color: var(--green-dark);
+    font-weight: 700;
 }
 
 .grey {
-    background: #f0fdf4;
+    background: #f2ebe3;
 }
 
-/* ─── Steps (How It Works) ──────────────── */
+/* ─── Steps ──────────────────────────────── */
 
 .steps {
     display: flex;
     gap: 30px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .step {
@@ -148,10 +184,10 @@ a:hover {
 }
 
 .step-num {
-    width: 45px;
-    height: 45px;
-    background: #16a34a;
-    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--green-mid), var(--brown-mid));
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
     border-radius: 50%;
@@ -159,15 +195,17 @@ a:hover {
     align-items: center;
     justify-content: center;
     margin: 0 auto 12px;
+    box-shadow: 0 3px 10px rgba(44, 24, 16, 0.2);
 }
 
 .step h3 {
     margin-bottom: 8px;
-    color: #15803d;
+    color: var(--brown-dark);
+    font-size: 16px;
 }
 
 .step p {
-    color: #4b7a55;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
@@ -181,12 +219,12 @@ a:hover {
 }
 
 .template-card {
-    background: #ffffff;
-    border-radius: 8px;
+    background: #fff;
+    border-radius: 10px;
     padding: 20px;
     max-width: 300px;
-    box-shadow: 0 2px 8px rgba(22,163,74,0.12);
-    border: 1px solid #bbf7d0;
+    box-shadow: 0 4px 16px rgba(74, 44, 23, 0.10);
+    border: 1px solid var(--cream-border);
 }
 
 .template-box {
@@ -195,7 +233,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #fff;
     font-weight: bold;
     margin-bottom: 12px;
     font-size: 16px;
@@ -203,55 +241,61 @@ a:hover {
 }
 
 .box-1 {
-    background: linear-gradient(135deg, #16a34a, #15803d);
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
 }
 
 .box-2 {
-    background: linear-gradient(135deg, #14532d, #166534);
+    background: linear-gradient(135deg, var(--brown-dark), var(--brown-mid));
 }
 
 .template-card h3 {
     margin-bottom: 6px;
     font-size: 16px;
-    color: #14532d;
+    color: var(--brown-dark);
+    font-weight: 700;
 }
 
 .template-card p {
     font-size: 13px;
-    color: #4b7a55;
-    margin-bottom: 12px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
 }
 
 /* ─── Builder page ──────────────────────── */
 
 .builder {
-    padding: 40px 0;
+    padding: 45px 0;
 }
 
 .builder h1 {
     text-align: center;
-    margin-bottom: 5px;
-    color: #14532d;
+    margin-bottom: 6px;
+    color: var(--green-dark);
+    font-weight: 700;
 }
 
 .page-sub {
     text-align: center;
-    color: #4b7a55;
-    margin-bottom: 30px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
 }
 
 .form-section {
-    background: #f0fdf4;
-    border-radius: 8px;
+    background: #fff;
+    border-radius: 10px;
     padding: 25px;
     margin-bottom: 20px;
-    border: 1px solid #bbf7d0;
+    border: 1px solid var(--cream-border);
+    box-shadow: 0 2px 8px rgba(74, 44, 23, 0.06);
 }
 
 .form-section h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #15803d;
+    font-size: 17px;
+    margin-bottom: 16px;
+    color: var(--brown-dark);
+    font-weight: 700;
+    padding-left: 12px;
+    border-left: 3px solid var(--green-mid);
 }
 
 .field {
@@ -261,44 +305,49 @@ a:hover {
 .field label {
     display: block;
     font-weight: bold;
-    margin-bottom: 4px;
-    font-size: 14px;
-    color: #1a2e1a;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
 .field input[type="text"],
 .field input[type="email"],
 .field input[type="tel"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #86efac;
-    border-radius: 5px;
+    padding: 10px 12px;
+    border: 1px solid var(--cream-border);
+    border-radius: 6px;
     font-size: 15px;
-    background: #ffffff;
-    color: #1a2e1a;
+    background: var(--cream);
+    color: var(--text-dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .field input[type="text"]:focus,
 .field input[type="email"]:focus,
 .field input[type="tel"]:focus {
     outline: none;
-    border-color: #16a34a;
-    box-shadow: 0 0 0 3px rgba(22,163,74,0.12);
+    border-color: var(--green-mid);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
 }
 
 .field input[type="color"] {
-    width: 50px;
-    height: 35px;
-    border: 1px solid #86efac;
-    border-radius: 4px;
+    width: 52px;
+    height: 36px;
+    border: 1px solid var(--cream-border);
+    border-radius: 5px;
     vertical-align: middle;
     cursor: pointer;
+    background: var(--cream);
 }
 
 .hint {
     font-size: 12px;
-    color: #4b7a55;
-    margin-top: 3px;
+    color: var(--text-muted);
+    margin-top: 4px;
 }
 
 .row {
@@ -310,34 +359,35 @@ a:hover {
     flex: 1;
 }
 
-/* ─── Swatches (colour preview) ─────────── */
+/* ─── Swatches ───────────────────────────── */
 
 .swatch {
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
-    border: 1px solid #86efac;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid var(--cream-border);
     display: inline-block;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 /* ─── Model selector ────────────────────── */
 
 .model-option {
     display: inline-block;
-    background: #ffffff;
-    border: 2px solid #bbf7d0;
-    border-radius: 8px;
+    background: var(--cream);
+    border: 2px solid var(--cream-border);
+    border-radius: 10px;
     padding: 12px;
     margin-right: 15px;
     margin-bottom: 10px;
     cursor: pointer;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .model-option:hover {
-    border-color: #16a34a;
+    border-color: var(--green-mid);
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.15);
 }
 
 .model-option input[type="radio"] {
@@ -345,7 +395,7 @@ a:hover {
 }
 
 .model-option input[type="radio"]:checked + .model-preview {
-    outline: 3px solid #16a34a;
+    outline: 3px solid var(--brown-mid);
     outline-offset: 2px;
 }
 
@@ -353,13 +403,13 @@ a:hover {
     display: block;
     width: 150px;
     height: 100px;
-    border-radius: 4px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #fff;
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
 
 /* ─── Action row ────────────────────────── */
@@ -371,15 +421,16 @@ a:hover {
 /* ─── Footer ────────────────────────────── */
 
 .footer {
-    background: #14532d;
-    color: #dcfce7;
-    padding: 25px 0;
+    background: linear-gradient(135deg, var(--green-dark), var(--brown-dark));
+    color: #e8d5c4;
+    padding: 28px 0;
     text-align: center;
     font-size: 13px;
+    border-top: 3px solid var(--brown-light);
 }
 
 .footer a {
-    color: #86efac;
+    color: var(--brown-light);
 }
 
 /* ─── Mobile ────────────────────────────── */
